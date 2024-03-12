@@ -1,4 +1,4 @@
-import { ImageBackground, Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import StartGameScreen from './screens/StartGameScreen';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useCallback, useState } from 'react';
@@ -8,6 +8,7 @@ import GameOverScreen from './screens/GameOverScreen';
 import {useFonts} from 'expo-font';
 //import AppLoading from 'expo-app-loading';
 import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -60,6 +61,8 @@ export default function App() {
 
 
   return (
+    <>
+    <StatusBar style='light'/>
     <LinearGradient
         // Button Linear Gradient
         colors={[Colors.primary700, Colors.accent500]}
@@ -77,6 +80,7 @@ export default function App() {
             </SafeAreaView>
         </ImageBackground>
     </LinearGradient>
+    </>
   );
 }
 
